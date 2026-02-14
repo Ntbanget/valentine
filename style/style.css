@@ -11,12 +11,14 @@ html {
 body {
   margin: 0;
   font-family: "Work Sans", sans-serif;
+
   background: radial-gradient(
     circle at center,
     #ffd6ec 0%,
     #ffb6d9 40%,
     #ff8fc7 100%
   );
+
   background-attachment: fixed;
   overflow-x: hidden;
 }
@@ -30,6 +32,8 @@ body {
 
 /* ============================== */
 /* STRUCTURE */
+/* ============================== */
+
 .container {
   min-height: 100vh;
   width: 100%;
@@ -55,31 +59,39 @@ body {
 
 /* ============================== */
 /* TEXT */
+/* ============================== */
+
 .one {
   font-size: 4.5rem;
 }
+
 .two {
   font-size: 1.2rem;
   font-weight: lighter;
 }
+
 .three {
   font-size: 3rem;
 }
+
 .five p {
   font-size: 2rem;
-  position: relative;
+  position: relative; /* penting agar tidak tumpang tindih */
   margin: 10px 0;
 }
+
 .five .idea-5 {
   font-size: 4rem;
   display: block;
   text-align: center;
 }
+
 .idea-5 span,
 .idea-6 span,
 .wish-hbd span {
   display: inline-block;
 }
+
 .idea-6 span {
   font-size: 15rem;
   display: block;
@@ -88,6 +100,8 @@ body {
 
 /* ============================== */
 /* TEXT BOX */
+/* ============================== */
+
 .four .text-box {
   width: 95%;
   max-width: 750px;
@@ -99,11 +113,13 @@ body {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
 }
+
 .text-box p {
   margin: 0;
-  text-align: center;
+  text-align: center; /* biar terbaca */
   word-wrap: break-word;
 }
+
 .text-box .fake-btn {
   position: absolute;
   right: 10px;
@@ -115,13 +131,16 @@ body {
 }
 
 /* ============================== */
-/* SECTION SIX */
+/* SECTION SIX (FIX GAMBAR BESAR) */
+/* ============================== */
+
 .six {
   position: relative;
 }
+
 .six img {
   display: block;
-  margin: 10px auto;
+  margin: 10px auto; /* beri jarak agar tidak tumpang tindih */
   width: 250px;
   max-width: 90%;
   height: auto;
@@ -130,11 +149,14 @@ body {
 
 /* ============================== */
 /* BALLOON */
+
 .baloons img {
   display: inline-block;
   position: absolute;
   width: 90px;
 }
+
+/* Baris 1, 2, 3 */
 .baloons img:nth-child(1),
 .baloons img:nth-child(2),
 .baloons img:nth-child(3),
@@ -143,6 +165,7 @@ body {
 .baloons img:nth-child(6) {
   top: 10%;
 }
+
 .baloons img:nth-child(7),
 .baloons img:nth-child(8),
 .baloons img:nth-child(9),
@@ -151,6 +174,7 @@ body {
 .baloons img:nth-child(12) {
   top: 35%;
 }
+
 .baloons img:nth-child(13),
 .baloons img:nth-child(14),
 .baloons img:nth-child(15),
@@ -159,34 +183,37 @@ body {
 .baloons img:nth-child(18) {
   top: 60%;
 }
+
+/* horizontal acak */
 .baloons img:nth-child(odd) {
   left: 10%;
 }
+
 .baloons img:nth-child(even) {
   right: 10%;
 }
 
 /* ============================== */
-/* LAPISAN FIX BALON & POINTER */
+/* MATIKAN GELOMBANG HITAM */
 .container div.seven {
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  pointer-events: none; /* biar klik tombol lewat */
-  z-index: 1; /* pastikan di belakang tombol */
 }
 
 .eight {
   display: none;
 }
+
 .eight svg {
   display: none;
 }
 
 /* ============================== */
 /* HEART */
+
 .heart {
   position: fixed;
   bottom: -20px;
@@ -195,6 +222,7 @@ body {
   animation: floatSoft 8s linear forwards;
   z-index: 2;
 }
+
 @keyframes floatSoft {
   0% {
     transform: translateY(0) scale(1);
@@ -208,14 +236,17 @@ body {
 
 /* ============================== */
 /* SURAT */
+
 .surat-container {
   margin-top: 20px;
   animation: pulseGlow 3s infinite alternate;
 }
+
 .surat-container img {
   width: 150px;
   max-width: 80%;
 }
+
 .wa-button {
   display: inline-block;
   margin-top: 15px;
@@ -231,48 +262,61 @@ body {
 
 /* ============================== */
 /* RESPONSIVE HP */
+/* ============================== */
+/* RESPONSIVE HP FIX */
 @media screen and (max-width: 500px) {
   .container > div {
-    top: 20vh;
-    transform: none;
+    top: 20vh; /* tetap sama seperti desktop */
+    transform: none; /* hapus translateY agar GSAP restart normal */
     padding: 0 10px;
   }
+
   .one {
     font-size: 2rem;
   }
+
   .three {
     font-size: 1.8rem;
   }
+
   .two {
     font-size: 1rem;
   }
+
   .five p {
     font-size: 1.2rem;
     position: relative;
     margin: 5px 0;
   }
+
   .five .idea-5 {
     font-size: 2rem;
   }
+
   .idea-6 span {
     font-size: 5rem;
   }
+
   .wish-hbd {
     font-size: 1.5rem;
   }
+
   .wish h5 {
     font-size: 1rem;
   }
+
   .baloons img {
     width: 60px;
     top: auto;
     bottom: 10%;
   }
+
   .six img {
     width: 180px;
     position: relative;
     top: 0;
   }
+
   .four .text-box {
     padding: 15px;
     max-width: 95%;
@@ -281,10 +325,53 @@ body {
     text-align: center;
   }
 
-  /* tombol replay clickable */
+  /* pastikan tombol replay terlihat dan clickable */
   #replay {
     position: relative;
     z-index: 10;
-    cursor: pointer;
   }
+}
+.container div.seven {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* tambahkan supaya tidak menutupi tombol */
+  z-index: 1; /* pastikan di belakang tombol */
+}
+
+.heart {
+  position: fixed;
+  bottom: -20px;
+  pointer-events: none; /* biar animasi hati tidak blok klik */
+  opacity: 0.8;
+  animation: floatSoft 8s linear forwards;
+  z-index: 2;
+}
+
+/* tombol replay clickable di semua device */
+#replay {
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* pastikan tombol play musik tetap di atas semua */
+#playMusicBtn {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff69b4;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 40px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.6);
+  z-index: 9999;
+  transition: all 0.4s ease;
 }
