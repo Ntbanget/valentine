@@ -76,13 +76,14 @@ body {
 
 .five p {
   font-size: 2rem;
-  position: absolute;
-  left: 0;
-  right: 0;
+  position: relative; /* penting agar tidak tumpang tindih */
+  margin: 10px 0;
 }
 
 .five .idea-5 {
   font-size: 4rem;
+  display: block;
+  text-align: center;
 }
 
 .idea-5 span,
@@ -93,6 +94,8 @@ body {
 
 .idea-6 span {
   font-size: 15rem;
+  display: block;
+  text-align: center;
 }
 
 /* ============================== */
@@ -113,7 +116,7 @@ body {
 
 .text-box p {
   margin: 0;
-  text-align: left;
+  text-align: center; /* biar terbaca */
   word-wrap: break-word;
 }
 
@@ -137,7 +140,7 @@ body {
 
 .six img {
   display: block;
-  margin: 0 auto;
+  margin: 10px auto; /* beri jarak agar tidak tumpang tindih */
   width: 250px;
   max-width: 90%;
   height: auto;
@@ -259,11 +262,10 @@ body {
 
 /* ============================== */
 /* RESPONSIVE HP */
-
 @media screen and (max-width: 500px) {
   .container > div {
-    top: 50%; /* tetap di tengah layar */
-    transform: translateY(-50%);
+    top: 20vh; /* tetap posisi desktop, jangan 50% */
+    transform: none; /* hapus transform supaya teks tidak menumpuk */
     padding: 0 10px;
   }
 
@@ -275,10 +277,14 @@ body {
     font-size: 1.8rem;
   }
 
+  .two {
+    font-size: 1rem;
+  }
+
   .five p {
-    font-size: 1.3rem;
-    position: relative; /* biar tidak absolute */
-    top: 0;
+    font-size: 1.2rem;
+    position: relative; /* tetap relative agar tidak tumpang tindih */
+    margin: 5px 0;
   }
 
   .five .idea-5 {
@@ -299,20 +305,21 @@ body {
 
   .baloons img {
     width: 60px;
-    top: auto; /* biar tidak terlalu ke bawah */
-    bottom: 10%; /* tetap terlihat */
+    top: auto;
+    bottom: 10%;
   }
 
   .six img {
     width: 180px;
-    position: relative; /* biar tidak absolute */
+    position: relative;
     top: 0;
   }
 
   .four .text-box {
     padding: 15px;
     max-width: 95%;
-    position: relative; /* biar tidak absolute */
+    position: relative;
     top: 0;
+    text-align: center; /* teks tidak keluar layar */
   }
 }
