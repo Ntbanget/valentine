@@ -2,22 +2,28 @@ html {
   box-sizing: border-box;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   font-family: "Work Sans", sans-serif;
 
-  /* 🌸 Soft Pink Glow Background */
   background: radial-gradient(
     circle at center,
     #ffd6ec 0%,
     #ffb6d9 40%,
     #ff8fc7 100%
   );
+
   background-attachment: fixed;
   overflow-x: hidden;
 }
 
-/* ✨ Soft Glow Text Global */
+/* ✨ Soft Glow */
 .one,
 .three,
 .wish-hbd {
@@ -25,25 +31,19 @@ body {
 }
 
 /* ============================== */
-/* STRUCTURE LAMA TETAP UTUH */
+/* STRUCTURE */
 /* ============================== */
 
 .container {
-  height: 100vh;
-  width: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
   margin: 0 auto;
   text-align: center;
   visibility: hidden;
   position: relative;
   overflow: hidden;
-}
-
-.container div.seven,
-.container div.eight {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
+  padding: 20px;
 }
 
 .container > div {
@@ -51,17 +51,15 @@ body {
   left: 0;
   right: 0;
   top: 20vh;
+  padding: 0 15px;
 }
+
+/* ============================== */
+/* TEXT */
+/* ============================== */
 
 .one {
   font-size: 4.5rem;
-}
-
-.one > img {
-  vertical-align: middle;
-  margin-bottom: 10px;
-  max-width: 100%;
-  height: auto;
 }
 
 .two {
@@ -73,48 +71,11 @@ body {
   font-size: 3rem;
 }
 
-.four .text-box {
-  width: 600px;
-  margin: 0 auto;
-  border: 3px solid #aaa;
-  border-radius: 5px;
-  padding: 10px;
-  position: relative;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(5px);
-}
-
-.text-box p {
-  margin: 0;
-  text-align: left;
-}
-
-.text-box span {
-  visibility: hidden;
-}
-
-.text-box .fake-btn {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  color: #fff;
-  background-color: rgb(21, 161, 237);
-  padding: 5px 8px;
-  border-radius: 3px;
-}
-
 .five p {
   font-size: 2rem;
   position: absolute;
   left: 0;
   right: 0;
-}
-
-.idea-3 strong {
-  padding: 3px 5px;
-  border-radius: 3px;
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.5);
 }
 
 .five .idea-5 {
@@ -131,45 +92,80 @@ body {
   font-size: 15rem;
 }
 
+/* ============================== */
+/* TEXT BOX */
+/* ============================== */
+
+.four .text-box {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 3px solid #aaa;
+  border-radius: 5px;
+  padding: 15px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.text-box p {
+  margin: 0;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.text-box .fake-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #fff;
+  background-color: rgb(21, 161, 237);
+  padding: 5px 8px;
+  border-radius: 3px;
+}
+
+/* ============================== */
+/* SECTION SIX (FIX GAMBAR BESAR) */
+/* ============================== */
+
 .six {
   position: relative;
 }
 
+/* 🔥 PERBAIKAN UTAMA GAMBAR */
 .six img {
-  display: inline-block;
-  max-width: 45%;
+  display: block;
+  margin: 0 auto;
+  width: 250px; /* ukuran fix biar gak gede */
+  max-width: 80%; /* responsive */
   height: auto;
+  border-radius: 20px;
 }
+
+/* ============================== */
+/* BALLOON */
+/* ============================== */
 
 .baloons img {
   display: inline-block;
   position: absolute;
-  width: 200px;
-}
-
-.baloons img:nth-child(even) {
-  left: 10%;
-}
-
-.baloons img:nth-child(odd) {
-  right: 10%;
-}
-
-.baloons img:nth-child(3n + 0) {
-  left: 30%;
-}
-
-.eight svg {
-  width: 25px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  visibility: hidden;
-  z-index: -1;
+  width: 120px;
 }
 
 /* ============================== */
-/* 💖 FLOATING HEART */
+/* MATIKAN GELOMBANG HITAM */
+/* ============================== */
+
+.eight {
+  display: none;
+}
+
+.eight svg {
+  display: none;
+}
+
+/* ============================== */
+/* HEART */
 /* ============================== */
 
 .heart {
@@ -193,7 +189,7 @@ body {
 }
 
 /* ============================== */
-/* 💌 SURAT + WA */
+/* SURAT */
 /* ============================== */
 
 .surat-container {
@@ -203,12 +199,7 @@ body {
 
 .surat-container img {
   width: 180px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.surat-container img:hover {
-  transform: scale(1.1);
+  max-width: 80%;
 }
 
 .wa-button {
@@ -224,48 +215,45 @@ body {
   transition: all 0.3s ease;
 }
 
-.wa-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(255, 20, 147, 0.8);
-}
-
-/* Soft Pulse Glow */
-@keyframes pulseGlow {
-  from {
-    filter: drop-shadow(0 0 5px #ff85c1);
-  }
-  to {
-    filter: drop-shadow(0 0 20px #ff1493);
-  }
-}
-
 /* ============================== */
-/* RESPONSIVE TETAP SAMA */
+/* RESPONSIVE HP */
 /* ============================== */
 
 @media screen and (max-width: 500px) {
-  .container {
-    width: 90%;
+  .one {
+    font-size: 2rem;
   }
 
-  .four .text-box {
-    width: 90%;
+  .three {
+    font-size: 1.8rem;
+  }
+
+  .five p {
+    font-size: 1.3rem;
+  }
+
+  .five .idea-5 {
+    font-size: 2rem;
   }
 
   .idea-6 span {
-    font-size: 10rem;
+    font-size: 5rem;
   }
 
   .wish-hbd {
-    font-size: 2.3em;
+    font-size: 1.5rem;
   }
 
   .wish h5 {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
-  .nine p {
-    font-size: 1.5rem;
-    font-weight: lighter;
+  .baloons img {
+    width: 70px;
+  }
+
+  /* 🔥 kecilkan gambar di HP */
+  .six img {
+    width: 180px;
   }
 }
