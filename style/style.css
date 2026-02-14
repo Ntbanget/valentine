@@ -52,6 +52,9 @@ body {
   right: 0;
   top: 20vh;
   padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ============================== */
@@ -97,12 +100,12 @@ body {
 /* ============================== */
 
 .four .text-box {
-  width: 95%; /* lebih lebar */
-  max-width: 750px; /* tambah dari 600 → 750 */
+  width: 95%;
+  max-width: 750px;
   margin: 0 auto;
   border: 3px solid #aaa;
   border-radius: 10px;
-  padding: 25px; /* tambah padding biar lega */
+  padding: 25px;
   position: relative;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
@@ -135,8 +138,8 @@ body {
 .six img {
   display: block;
   margin: 0 auto;
-  width: 250px; /* fix biar tidak terlalu besar */
-  max-width: 90%; /* responsive di HP */
+  width: 250px;
+  max-width: 90%;
   height: auto;
   border-radius: 20px;
 }
@@ -147,7 +150,7 @@ body {
 .baloons img {
   display: inline-block;
   position: absolute;
-  width: 90px; /* lebih kecil agar muat banyak */
+  width: 90px;
 }
 
 /* Baris 1, 2, 3 */
@@ -157,7 +160,7 @@ body {
 .baloons img:nth-child(4),
 .baloons img:nth-child(5),
 .baloons img:nth-child(6) {
-  top: 10%; /* baris 1 */
+  top: 10%;
 }
 
 .baloons img:nth-child(7),
@@ -166,7 +169,7 @@ body {
 .baloons img:nth-child(10),
 .baloons img:nth-child(11),
 .baloons img:nth-child(12) {
-  top: 35%; /* baris 2 */
+  top: 35%;
 }
 
 .baloons img:nth-child(13),
@@ -175,7 +178,7 @@ body {
 .baloons img:nth-child(16),
 .baloons img:nth-child(17),
 .baloons img:nth-child(18) {
-  top: 60%; /* baris 3 */
+  top: 60%;
 }
 
 /* horizontal acak */
@@ -237,7 +240,7 @@ body {
 }
 
 .surat-container img {
-  width: 150px; /* lebih kecil untuk HP */
+  width: 150px;
   max-width: 80%;
 }
 
@@ -258,6 +261,12 @@ body {
 /* RESPONSIVE HP */
 
 @media screen and (max-width: 500px) {
+  .container > div {
+    top: 50%; /* tetap di tengah layar */
+    transform: translateY(-50%);
+    padding: 0 10px;
+  }
+
   .one {
     font-size: 2rem;
   }
@@ -268,6 +277,8 @@ body {
 
   .five p {
     font-size: 1.3rem;
+    position: relative; /* biar tidak absolute */
+    top: 0;
   }
 
   .five .idea-5 {
@@ -287,15 +298,21 @@ body {
   }
 
   .baloons img {
-    width: 60px; /* lebih kecil agar muat 3 baris */
+    width: 60px;
+    top: auto; /* biar tidak terlalu ke bawah */
+    bottom: 10%; /* tetap terlihat */
   }
 
   .six img {
     width: 180px;
+    position: relative; /* biar tidak absolute */
+    top: 0;
   }
 
   .four .text-box {
     padding: 15px;
     max-width: 95%;
+    position: relative; /* biar tidak absolute */
+    top: 0;
   }
 }
