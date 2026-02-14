@@ -1,4 +1,4 @@
-html {
+perbaiki jangan di rombak html {
   box-sizing: border-box;
 }
 
@@ -261,13 +261,10 @@ body {
 }
 
 /* ============================== */
-/* RESPONSIVE HP */
-/* ============================== */
-/* RESPONSIVE HP FIX */
 @media screen and (max-width: 500px) {
   .container > div {
-    top: 20vh; /* tetap sama seperti desktop */
-    transform: none; /* hapus translateY agar GSAP restart normal */
+    top: 20vh; /* tetap posisi desktop, jangan 50% */
+    transform: none; /* hapus transform supaya teks tidak menumpuk */
     padding: 0 10px;
   }
 
@@ -285,7 +282,7 @@ body {
 
   .five p {
     font-size: 1.2rem;
-    position: relative;
+    position: relative; /* tetap relative agar tidak tumpang tindih */
     margin: 5px 0;
   }
 
@@ -322,56 +319,6 @@ body {
     max-width: 95%;
     position: relative;
     top: 0;
-    text-align: center;
+    text-align: center; /* teks tidak keluar layar */
   }
-
-  /* pastikan tombol replay terlihat dan clickable */
-  #replay {
-    position: relative;
-    z-index: 10;
-  }
-}
-.container div.seven {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none; /* tambahkan supaya tidak menutupi tombol */
-  z-index: 1; /* pastikan di belakang tombol */
-}
-
-.heart {
-  position: fixed;
-  bottom: -20px;
-  pointer-events: none; /* biar animasi hati tidak blok klik */
-  opacity: 0.8;
-  animation: floatSoft 8s linear forwards;
-  z-index: 2;
-}
-
-/* tombol replay clickable di semua device */
-#replay {
-  position: relative;
-  z-index: 10;
-  cursor: pointer;
-}
-
-/* pastikan tombol play musik tetap di atas semua */
-#playMusicBtn {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #ff69b4;
-  border: none;
-  padding: 14px 28px;
-  border-radius: 40px;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 0 25px rgba(255, 105, 180, 0.6);
-  z-index: 9999;
-  transition: all 0.4s ease;
 }

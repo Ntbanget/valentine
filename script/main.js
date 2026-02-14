@@ -226,4 +226,4 @@ const resolveFetch = () => {
   });
 };
 
-resolveFetch(); // ❌ tidak auto start lagi
+resolveFetch(); // ❌ tidak auto start lagi perbaiki DAN JANGAN DI ROMBAK 
