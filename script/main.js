@@ -226,12 +226,4 @@ const resolveFetch = () => {
   });
 };
 
-// Jalankan fetch, lalu otomatis start animasi
-resolveFetch().then(() => {
-  if (typeof animationTimeline === "function") {
-    animationTimeline();
-  }
-});
-
-
 resolveFetch(); // ❌ tidak auto start lagi
