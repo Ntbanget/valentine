@@ -151,11 +151,48 @@ body {
 
 /* ============================== */
 /* BALLOON */
-/* ============================== */
+
 .baloons img {
   display: inline-block;
   position: absolute;
-  width: 200px; /* balik ke ukuran awal */
+  width: 100px; /* kecil agar muat banyak */
+}
+
+/* Baris 1, 2, 3 (contoh) */
+.baloons img:nth-child(1),
+.baloons img:nth-child(2),
+.baloons img:nth-child(3),
+.baloons img:nth-child(4),
+.baloons img:nth-child(5),
+.baloons img:nth-child(6) {
+  top: 10%; /* baris 1 */
+}
+
+.baloons img:nth-child(7),
+.baloons img:nth-child(8),
+.baloons img:nth-child(9),
+.baloons img:nth-child(10),
+.baloons img:nth-child(11),
+.baloons img:nth-child(12) {
+  top: 35%; /* baris 2 */
+}
+
+.baloons img:nth-child(13),
+.baloons img:nth-child(14),
+.baloons img:nth-child(15),
+.baloons img:nth-child(16),
+.baloons img:nth-child(17),
+.baloons img:nth-child(18) {
+  top: 60%; /* baris 3 */
+}
+
+/* posisi horizontal acak */
+.baloons img:nth-child(odd) {
+  left: 10%;
+}
+
+.baloons img:nth-child(even) {
+  right: 10%;
 }
 
 /* ============================== */
