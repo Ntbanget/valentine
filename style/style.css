@@ -262,10 +262,12 @@ body {
 
 /* ============================== */
 /* RESPONSIVE HP */
+/* ============================== */
+/* RESPONSIVE HP FIX */
 @media screen and (max-width: 500px) {
   .container > div {
-    top: 20vh; /* tetap posisi desktop, jangan 50% */
-    transform: none; /* hapus transform supaya teks tidak menumpuk */
+    top: 20vh; /* tetap sama seperti desktop */
+    transform: none; /* hapus translateY agar GSAP restart normal */
     padding: 0 10px;
   }
 
@@ -283,7 +285,7 @@ body {
 
   .five p {
     font-size: 1.2rem;
-    position: relative; /* tetap relative agar tidak tumpang tindih */
+    position: relative;
     margin: 5px 0;
   }
 
@@ -320,6 +322,12 @@ body {
     max-width: 95%;
     position: relative;
     top: 0;
-    text-align: center; /* teks tidak keluar layar */
+    text-align: center;
+  }
+
+  /* pastikan tombol replay terlihat dan clickable */
+  #replay {
+    position: relative;
+    z-index: 10;
   }
 }
